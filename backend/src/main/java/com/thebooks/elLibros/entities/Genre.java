@@ -9,13 +9,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_genre")
 public class Genre implements Serializable {
-
-	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -23,6 +22,7 @@ public class Genre implements Serializable {
 	private Long id;
 	private String name;
 	
+	@OneToMany(mappedBy = "genre")
 	private List<Libro> libros = new ArrayList<>() ;
 
 	public Genre() {

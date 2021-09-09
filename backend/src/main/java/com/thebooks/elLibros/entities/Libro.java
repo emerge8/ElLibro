@@ -19,7 +19,6 @@ import com.thebooks.elLibros.entities.enums.Platform;
 @Entity
 @Table(name = "tb_libro")
 public class Libro implements Serializable {
-
 	private static final long serialVersionUID = 1L;
 
 	@Id
