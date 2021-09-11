@@ -14,6 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.thebooks.elLibros.entities.enums.Platform;
 
 @Entity
@@ -27,9 +28,11 @@ public class Libro implements Serializable {
 	private String title;
 	private Platform platform;
 
+
 	@ManyToOne
 	@JoinColumn(name = "genre_id")
 	private Genre genre;
+
 
 	@OneToMany(mappedBy = "libro")
 	private List<Record> records = new ArrayList<>();
